@@ -23,18 +23,10 @@ from glob import glob
 import SimpleITK
 import json
 
-INPUT_PATH = Path("/input")
-OUTPUT_PATH = Path("/output")
-RESOURCE_PATH = Path("resources")
-
 def run():
-
-    debug = False  # Deafult FALSE (SUBMISSION TO GC).
-    if debug:
-        INPUT_PATH = Path("/input") # path to local dirs
-        OUTPUT_PATH = Path("/output")
-        #RESOURCE_PATH = Path("resources")
-
+    INPUT_PATH = Path("/input")
+    OUTPUT_PATH = Path("/output")
+    RESOURCE_PATH = Path("resources")
 
     # Read input data.
     ''' TODO- uncomment the image modalities you use in your algorithm.

@@ -89,12 +89,13 @@ def run():
     #acute_stroke_clinical_information = json.load(open(INPUT_PATH / "acute-stroke-clinical-information.json"))
 
 
-    # using resournces.
+    # using resources.
     # with open(RESOURCE_PATH / "some_resource.txt", "r") as f:
     #     print(f.read())
     # Prediction scripts come below.
     ################################################################################################################
     #################################### here comes your predictions algorithm  ####################################
+    _show_torch_cuda_info()
     stroke_lesion_segmentation = predict_infarct(preprocessed_tmax_map) # todo -function to be updated by you!
     ################################################################################################################
 
@@ -145,5 +146,16 @@ def predict_infarct(preprocessed_tmax, cutoff=9):
     return prediction.astype(int)
 
 
+def _show_torch_cuda_info():
+    import torch
+
+    print("=+=" * 10)
+    print("Collecting Torch CUDA information")
+    print(f"Torch CUDA is available: {(available := torch.cuda.is_available())}")
+    if available:
+        print(f"\tnumber of devices: {torch.cuda.device_count()}")
+        print(f"\tcurrent device: { (current_device := torch.cuda.current_device())}")
+        print(f"\tproperties: {torch.cuda.get_device_properties(current_device)}")
+    print("=+=" * 10)
 if __name__ == "__main__":
     raise SystemExit(run())

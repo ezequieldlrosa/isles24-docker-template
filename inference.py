@@ -95,7 +95,7 @@ def run():
     # Prediction scripts come below.
     ################################################################################################################
     #################################### here comes your predictions algorithm  ####################################
-    _show_torch_cuda_info()
+    #_show_torch_cuda_info() # comment out to test pytorch/cuda
     stroke_lesion_segmentation = predict_infarct(preprocessed_tmax_map) # todo -function to be updated by you!
     ################################################################################################################
 

@@ -36,10 +36,14 @@ This is an example Docker template for submitting to the ISLES'24 challenge.
 
 4. **Test your algorithm** by running `./test_run.sh`. This script should predict the example image, saving the result in `test/output/`.
 
-5. **Export the container** and prep it for upload to Grand-Challenge.org. You can call:
+5. **Export and prepare the container for upload to Grand-Challenge.org.**
 
-    ```sh
-    docker save example-algorithm-preliminary-docker-evaluation | gzip -c > example-algorithm-preliminary-docker-evaluation.tar.gz
-    ```
+   - **Option 1: Save and upload your Docker image to Grand-Challenge.** You can do this by saving the Docker image as a `.tar.gz` file and then uploading it:
+
+     ```sh
+     docker save example-algorithm-preliminary-docker-evaluation | gzip -c > example-algorithm-preliminary-docker-evaluation.tar.gz
+     ```
+
+   - **Option 2: Link a GitHub repository to Grand-Challenge for building and integration.** Create your own GitHub repository and follow [these instructions](https://grand-challenge.org/documentation/linking-a-github-repository-to-your-algorithm/).
 
 6. **Further information** about preparing Dockers for Grand-Challenge can be found [here](https://grand-challenge.org/documentation/create-your-own-algorithm/).

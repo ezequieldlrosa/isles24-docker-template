@@ -64,7 +64,7 @@ def run():
     # # 2.1) CT images.
     #
     # preprocessed_ct_angiography = load_image_file_as_array(
-    #     location=INPUT_PATH / "images/preprocessed-ct-angiography",
+    #     location=INPUT_PATH / "images/preprocessed-CT-angiography",
     # )
     # preprocessed_perfusion_ct = load_image_file_as_array(
     #     location=INPUT_PATH / "images/preprocessed-perfusion-ct",

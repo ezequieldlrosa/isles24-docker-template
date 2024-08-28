@@ -123,7 +123,7 @@ def write_array_as_image_file(*, location, array):
     suffix = ".mha"
     print(str(location / f"output{suffix}"))
     image = SimpleITK.GetImageFromArray(array)
-    print(sum(image))
+    #print(sum(image))
     SimpleITK.WriteImage(
         image,
         location / f"output{suffix}",
